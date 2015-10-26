@@ -1,0 +1,19 @@
+#website-title {
+	text-align:center;
+}
+
+#commentbox {
+	margin-bottom: 20px;
+}
+
+.comment {
+	border: 2px solid gray;
+}
+
+h1 {
+	color: black;
+}
+
+p {
+	margin-top: 10px;
+}
