@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <script src="js/sorttable.js"></script>
         <script src="../js/sorttable.js"></script>
-        <title>mysteampipe.com</title>
+        <title>MySteamPipe</title>
     </head>
     <body style="color: white; background-color: #183F53;">
     <div class="container">
@@ -20,9 +20,9 @@
             </div>
             <ul class="nav navbar-nav">
                 @if(Session::get('steamid'))
-                <li><a href="#">Profile</a></li>
+                <li><a href="/profile">Profile</a></li>
                 <li><a href="/library">Library</a></li>
-                <li><a href="#">Friends</a></li>
+                <li><a href="/friends">Friends</a></li>
                 <li><a href="/logout">Log Out</a></li>
                 @else
                 <li><a href="/help">Help</a></li>

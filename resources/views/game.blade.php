@@ -3,6 +3,10 @@
 
 @section('content')
 
+@if(!Session::get('steamid'))
+    Please log in first
+@endif
+
 <div class="col-md-2"></div>
 <div class="well col-md-8">
     <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{$AppID}}/header.jpg" class="img-responsive center-block" />

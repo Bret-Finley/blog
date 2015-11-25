@@ -2,6 +2,10 @@
 
 @section('content')
 
+@if(!Session::get('steamid'))
+    Please log in first
+@endif
+
 @foreach($players as $player)
 
 <div class="row">
