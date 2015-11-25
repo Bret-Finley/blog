@@ -4,7 +4,7 @@
 
 <div class="col-md-2"></div>
 <div class="well col-md-8">
-<table class="table table-bordered table-hover" data-sortable>
+<table class="table table-bordered" data-sortable>
 <tbody>
 <tr>
 	<th>AppID</th>
