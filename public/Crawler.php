@@ -3,7 +3,7 @@ include('Dao.php');
 ini_set('max_execution_time', 3000);
 
 $db = new Dao();
-$numpages = 586;
+$numpages = 602;
 
 $foo = true;
 
