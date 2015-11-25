@@ -3,9 +3,10 @@
 
 @section('content')
 
-@if(!Session::get('steamid'))
+@if(!Session::has('steamid'))
     Please log in first
-@endif
+
+@else
 
 <div class="col-md-2"></div>
 <div class="well col-md-8">
@@ -43,5 +44,7 @@
     <?php $index++; ?>
     @endforeach
 </div>
+
+@endif
 
 @stop

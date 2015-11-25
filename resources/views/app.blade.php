@@ -7,6 +7,8 @@
 		<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
         <script src="js/sorttable.js"></script>
         <script src="../js/sorttable.js"></script>
+        <script src="sortable/js/sortable.min.js"></script>
+        <script src="../sortable/js/sortable.min.js"></script>
         <title>MySteamPipe</title>
     </head>
     <body style="color: white; background-color: #183F53;">

@@ -2,9 +2,10 @@
 
 @section('content')
 
-@if(!Session::get('steamid'))
+@if(!Session::has('steamid'))
     Please log in first
-@endif
+
+@else
 
 @foreach($players as $player)
 
@@ -37,5 +38,7 @@
 </div>
 
 @endforeach
+
+@endif
 
 @stop
