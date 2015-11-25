@@ -8,6 +8,9 @@
         <script type='text/javascript' src='s/common.js'></script>
         <script type='text/javascript' src='s/css.js'></script>
         <script type='text/javascript' src='s/standardista-table-sorting.js'></script>
+        <script type='text/javascript' src='../s/common.js'></script>
+        <script type='text/javascript' src='../s/css.js'></script>
+        <script type='text/javascript' src='../s/standardista-table-sorting.js'></script>
         <title>MySteamPipe</title>
     </head>
     <body style="color: white; background-color: #183F53;">
