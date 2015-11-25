@@ -1,19 +1,55 @@
-#website-title {
-	text-align:center;
+body {
+	color: white;
+	background-color: #183F53;
 }
 
-#commentbox {
-	margin-bottom: 20px;
+.results {
+	font-size: 20px;
 }
 
-.comment {
-	border: 2px solid gray;
+.friend-well {
+	font-size: 30px;
 }
 
-h1 {
-	color: black;
+.news-header {
+	margin-top: 5px;
+	margin-bottom: 3px;
+	color: white;
 }
 
-p {
-	margin-top: 10px;
+hr {
+	margin-top: 0px;
+	margin-bottom: 10px;
+}
+
+.well {
+	color: #B5B4B2;
+}
+
+.offline {
+	color: red;
+}
+
+.online {
+	color: green;
+}
+
+.busy {
+	color: blue;
+}
+
+.away {
+	color: yellow;
+}
+
+.snooze {
+	color: pink;
+}
+
+.trade {
+	color: purple;
+}
+
+.play {
+	color: silver;
 }

@@ -11,39 +11,30 @@
 |
 */
 
-Route::get('/', 'APIController@getBlogs');
-
-Route::get('/login', function () {
-	return view('login');
+Route::get('/', function () {
+    return view('home');
 });
 
-Route::get('/logout', 'UserController@logout');
-
-Route::get('/register', function () {
-	return view('register');
+Route::get('/help', function () {
+    return view('help');
 });
-
-Route::get('/account', 'UserController@account');
-
-Route::get('/newpost', function () {
-    return view('newpost');
-});
-
-Route::get('/view-post/{id}', 'APIController@getBlogPost');
-
-Route::get('/view-blog/{id}', 'APIController@getBlog');
 
 Route::get('/about', function () {
-	return view('about');
+    return view('about');
 });
-
 
 Route::post('/login', 'UserController@login');
 
-Route::post('/register', 'UserController@register');
+Route::get('/logout', 'UserController@logout');
 
-Route::post('/account', 'UserController@editaccount');
+Route::get('/library', 'UserController@library');
 
-Route::post('/newpost', 'BlogController@create');
+Route::get('/game/{AppID}', 'PageController@game');
 
-Route::post('/view-post/{id}', 'BlogController@saveComment');
+Route::get('/profile', 'PageController@profile');
+
+Route::get('/friends', 'UserController@friends');
+
+Route::get('/test', function () {
+    return view('friends');
+});

@@ -22,14 +22,13 @@ class User extends Model implements AuthenticatableContract,
      * @var string
      */
     protected $table = 'users';
-    protected $primaryKey = 'id';
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = ['username', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password'];
 
     /**
      * The attributes excluded from the model's JSON form.
@@ -37,9 +36,4 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
-
-    public function blog()
-    {
-        return $this->hasOne('App\Blog');
-    }
 }
