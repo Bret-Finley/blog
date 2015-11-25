@@ -32,18 +32,20 @@ class UserController extends Controller
 
     public function library()
     {
-        //$steamid = Session::get('steamid');
+        $steamid = Session::get('steamid');
         $api = new SteamAPIController();
-        $data = $api->getLibraryVerbose('76561198025369330');
+        //$data = $api->getLibraryVerbose('76561198025369330');
+        $data = $api->getLibraryVerbose((string)$steamid);
         $data = $data["response"];
         return view('library', $data);
     }
 
     public function friends()
     {
-        //$steamid = Session::get('steamid');
+        $steamid = Session::get('steamid');
         $api = new SteamAPIController();
-        $data = $api->getFriends('76561198025369330');
+        //$data = $api->getFriends('76561198025369330');
+        $data = $api->getFriends((string)$steamid);
         $friends = $data["friendslist"];
         $friends = $friends["friends"];
         $array = array();
