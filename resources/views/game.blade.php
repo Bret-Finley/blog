@@ -8,14 +8,16 @@
     <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{$AppID}}/header.jpg" class="img-responsive center-block" />
     <h3>Achievements</h3>
     <table class="table table-bordered sortable">
+        <thead>
+            <tr>
+                <th>Icon</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Unlocked</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
     <tbody>
-    <tr>
-        <th>Icon</th>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Unlocked</th>
-        <th>Percentage</th>
-    </tr>
     <?php $index = 0; ?>
     @foreach($achievements as $achievement)
         <tr>

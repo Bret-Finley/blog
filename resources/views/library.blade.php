@@ -5,13 +5,15 @@
 <div class="col-md-2"></div>
 <div class="well col-md-8">
 <table class="table table-bordered table-hover sortable">
+	<thead>
+		<tr>
+			<th>AppID</th>
+			<th>Name</th>
+			<th>Price</th>
+		    <th>Hours Played</th>
+		</tr>
+	</thead>
 <tbody>
-<tr>
-	<th>AppID</th>
-	<th>Name</th>
-	<th>Price</th>
-    <th>Hours Played</th>
-</tr>
 <?php $totalprice = 0; use App\Steamapps; ?>
 <?php $totalhours = 0; ?>
 <?php $totalgames = 0; ?>
