@@ -2,11 +2,6 @@
 
 @section('content')
 
-@if(!Session::has('steamid'))
-    Please log in first
-
-@else
-
 <div class="col-md-2"></div>
 <div class="well col-md-8">
 <table class="table table-bordered table-hover" data-sortable>
@@ -49,7 +44,5 @@
 <strong class="pull-right">{{ round($totalhours / $totalgames, 2) }}</strong><br />
 </div>
 </div>
-
-@endif
 
 @stop

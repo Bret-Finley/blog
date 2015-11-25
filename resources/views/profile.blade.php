@@ -2,11 +2,6 @@
 
 @section('content')
 
-@if(!Session::has('steamid'))
-    Please log in first
-
-@else
-
 <div class="col-md-2"></div>
 <div class="well col-md-8 friend-well">
     <div class="col-md-4">
@@ -21,7 +16,5 @@
         Location: {{ $locstatecode }}, {{ $loccountrycode }}<br />
     </div>
 </div>
-
-@endif
 
 @stop

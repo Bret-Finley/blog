@@ -32,6 +32,11 @@ class UserController extends Controller
 
     public function library()
     {
+        if(!Session::has('steamid'))
+        {
+            return redirect('/');
+        }
+
         $steamid = Session::get('steamid');
         $api = new SteamAPIController();
         //$data = $api->getLibraryVerbose('76561198025369330');
@@ -42,6 +47,11 @@ class UserController extends Controller
 
     public function friends()
     {
+        if(!Session::has('steamid'))
+        {
+            return redirect('/');
+        }
+        
         $steamid = Session::get('steamid');
         $api = new SteamAPIController();
         //$data = $api->getFriends('76561198025369330');

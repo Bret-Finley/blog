@@ -12,6 +12,11 @@ class PageController extends Controller
 {
     public function game($AppID)
     {
+        if(!Session::has('steamid'))
+        {
+            return redirect('/');
+        }
+
         $api = new SteamAPIController();
         $SteamID = Session::get("steamid");
         //$SteamID = '76561198025369330';
@@ -26,13 +31,18 @@ class PageController extends Controller
 
     public function profile()
     {
+        if(!Session::has('steamid'))
+        {
+            return redirect('/');
+        }
+        
         $api = new SteamAPIController();
         $SteamID = Session::get("steamid");
         //$SteamID = '76561198025369330';
         $array = array();
         array_push($array, $SteamID);
         $data = $api->getPlayerSummaries($array)["response"]["players"][0];
-        
+
         return view('profile', $data);
     }
 }

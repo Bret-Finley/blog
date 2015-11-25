@@ -2,11 +2,6 @@
 
 @section('content')
 
-@if(!Session::has('steamid'))
-    Please log in first
-
-@else
-
 @foreach($players as $player)
 
 <div class="row">
@@ -38,7 +33,5 @@
 </div>
 
 @endforeach
-
-@endif
 
 @stop

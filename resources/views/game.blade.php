@@ -3,11 +3,6 @@
 
 @section('content')
 
-@if(!Session::has('steamid'))
-    Please log in first
-
-@else
-
 <div class="col-md-2"></div>
 <div class="well col-md-8">
     <img src="http://cdn.akamai.steamstatic.com/steam/apps/{{$AppID}}/header.jpg" class="img-responsive center-block" />
@@ -44,7 +39,5 @@
     <?php $index++; ?>
     @endforeach
 </div>
-
-@endif
 
 @stop
