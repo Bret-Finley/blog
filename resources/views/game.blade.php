@@ -29,7 +29,11 @@
                 @endif
             </td>
             <td style="vertical-align:middle">{{ $achievement["name"] }}</td>
+            @if(!empty($achievement["description"]))
             <td style="vertical-align:middle">{{ $achievement["description"] }}</td>
+            @else
+            <td style="vertical-align:middle">No Description Provided</td>
+            @endif
             <td style="vertical-align:middle" align="center"><?php
                 if($achievement["achieved"] == 1)
                     echo '&#10004';

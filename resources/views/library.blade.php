@@ -24,7 +24,11 @@
     <?php $hours = round($game["playtime_forever"] / 60, 2); $totalhours += $hours; ?>
     <td>{{ $game["appid"] }}</td>
     <td><a href='/game/{{$game["appid"]}}'>{{ $game["name"] }}</a></td>
-    <td>{{ $price }}</td>
+	@if(!empty($price))
+	<td>{{ $price }}</td>
+	@else
+	<td>--</td>
+	@endif
     <td>{{ $hours }}</td>
 </tr>
 @endforeach
