@@ -70,7 +70,11 @@ class SteamAPIController extends Controller
     public function getAchievementPercentage($appid)
     {
         $url = 'http://api.steampowered.com/ISteamUserStats/GetGlobalAchievementPercentagesForApp/v0002/?gameid=' . $appid . '&format=json';
-        $json = file_get_contents($url);
+        try {
+            $json = file_get_contents($url);
+        } catch (Exception $e) {
+            return "foo";
+        }
         $data = json_decode($json, true);
         return $data;
     }

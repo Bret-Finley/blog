@@ -27,7 +27,7 @@
 	@if(!empty($price))
 	<td>{{ $price }}</td>
 	@else
-	<td>--</td>
+	<td>----</td>
 	@endif
     <td>{{ $hours }}</td>
 </tr>
