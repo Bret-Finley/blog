@@ -23,7 +23,11 @@
     <?php $price = Steamapps::find($game["appid"])["price"]; $totalprice += $price; ?>
     <?php $hours = round($game["playtime_forever"] / 60, 2); $totalhours += $hours; ?>
     <td>{{ $game["appid"] }}</td>
+	@if($game["achievements"])
     <td><a href='/game/{{$game["appid"]}}'>{{ $game["name"] }}</a></td>
+	@else
+	<td>{{ $game["name"] }}</td>
+	@endif
 	@if(!empty($price))
 	<td>{{ $price }}</td>
 	@else
