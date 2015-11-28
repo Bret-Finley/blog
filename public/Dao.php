@@ -6,7 +6,7 @@ class Dao
 	private $db = "steam";
 	private $user = "forge";
 	private $pass = "Zo9orKED563kemAYHTbA";
-	
+
 	public function __construct()
 	{
 		// no-op
@@ -34,24 +34,24 @@ class Dao
 		return 0;
 	}
 
-	public function save($appid, $appname, $price)
+	public function save($appid, $appname, $price, $achievements)
 	{
 		$conn = $this->getConnection();
 		$appid = $conn->quote($appid);
 		$appname = $conn->quote($appname);
 		$price = $conn->quote($price);
 		$sql = "INSERT INTO steamapps
-		                  (appid, appname, price)
+		                  (appid, appname, price, achievements)
 		                  VALUES
-		                  ($appid, $appname, $price);";
-		
+		                  ($appid, $appname, $price, $achievements);";
+
 		$q = $conn->prepare($sql);
 		$q->execute();
 	}
 
-	public function saveAll($appidArray, $appnameArray, $priceArray)
+	public function saveAll($appidArray, $appnameArray, $priceArray, $achieveArray)
 	{
-		if(count($appidArray) != count($appnameArray) || count($appidArray) != count($priceArray))
+		if(count($appidArray) != count($appnameArray) || count($appidArray) != count($priceArray) || count($appidArray) != count($achieveArray))
 		{
 			return False;
 		}
@@ -60,7 +60,7 @@ class Dao
 
 		for($i = 0; $i < $length; $i++)
 		{
-			$this->save($appidArray[$i], $appnameArray[$i], $priceArray[$i]);
+			$this->save($appidArray[$i], $appnameArray[$i], $priceArray[$i], $achieveArray[$i]);
 		}
 
 		return True;
