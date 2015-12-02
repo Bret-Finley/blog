@@ -22,6 +22,7 @@ class UserController extends Controller
         $array = array();
         array_push($array, $id);
         $data = $api->getPlayerSummaries($array)["response"]["players"];
+        return $data;
 
         if(empty($data) || $data["communityvisibilitystate"] == -1)
         {
