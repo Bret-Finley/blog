@@ -31,7 +31,7 @@ class UserController extends Controller
         $data = $data[0];
         if($data["communityvisibilitystate"] == -1)
         {
-            return redirect('/';)
+            return redirect('/');
         }
 
         Session::put('steamid', $id);
