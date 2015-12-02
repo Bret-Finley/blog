@@ -70,10 +70,11 @@ class UserController extends Controller
         $steamid = Session::get('steamid');
         $api = new SteamAPIController();
         $data = NULL;
+
         try {
             $data = $api->getFriends((string)$steamid);
         } catch (\Exception $e) {
-            return "error!";
+            redirect('/');
         }
         $friends = $data["friendslist"];
         $friends = $friends["friends"];

@@ -19,7 +19,7 @@ class PageController extends Controller
 
         $api = new SteamAPIController();
         $SteamID = Session::get("steamid");
-        //$SteamID = '76561198025369330';
+
         $data["achievements"] = $api->getAchievements($SteamID, $AppID)["playerstats"]["achievements"];
         $data["schema"] = $api->getSchema($AppID)["game"]["availableGameStats"]["achievements"];
         $data["percentages"] = $api->getAchievementPercentage($AppID)["achievementpercentages"]["achievements"];
@@ -40,7 +40,13 @@ class PageController extends Controller
         $SteamID = Session::get("steamid");
         $array = array();
         array_push($array, $SteamID);
-        $data = $api->getPlayerSummaries($array)["response"]["players"][0];
+        $data = NULL;
+
+        try {
+            $data = $api->getPlayerSummaries($array)["response"]["players"][0];
+        } catch (\Exception $e) {
+            redirect('/');
+        }
 
         return view('profile', $data);
     }
