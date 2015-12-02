@@ -5,10 +5,15 @@
 
 <div class="col-md-3"></div>
 <div class="well col-md-6">
-    <h3 class="news-header">Header</h3>
+    <h3 class="news-header">Thanks for Visiting the Site!</h3>
     <hr>
     <p class="news-content">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean suscipit libero est, condimentum ullamcorper nulla maximus tincidunt. Phasellus finibus lorem turpis, a ornare nisl efficitur sit amet. Nulla sit amet erat vulputate, rhoncus orci in, vehicula ipsum. Suspendisse et massa tincidunt, imperdiet nulla posuere, euismod sapien. Ut tincidunt lectus lobortis ante mattis, et commodo lacus viverra. Pellentesque commodo est elit, sed posuere arcu mollis et. Proin consectetur orci nisi, porttitor pellentesque nisi elementum vitae. Donec aliquam mi dolor, ac congue nisi molestie at. Suspendisse finibus felis ultricies, tincidunt mi at, venenatis quam.
+        Before you get started, make sure that you've set everything in your Steam
+        profile to "Public". This helps ensure that we can make those API confidently
+        and effectively! If you need help on the process, please check out the <a href="/help">help page</a>.<br />
+        All you need to log in is your Steam ID, it's really that simple! No passwords or usernames, and no pesky confimartion
+        emails either! Really! All you need to do is grab your unique Steam ID and paste it into the bar over there. If you need
+        help on finding your Steam ID, try Googling it, or head over to our <a href="/help">help page</a>. 
     </p>
 </div>
 
