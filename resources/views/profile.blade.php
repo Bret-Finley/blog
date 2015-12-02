@@ -11,7 +11,7 @@
         @if(isset($personaname))
         Username: {{ $personaname }}<br />
         @endif
-        @if(isset($personaname))
+        @if(isset($realname))
         Real Name: {{ $realname }}<br />
         @endif
         @if(isset($profileurl))
