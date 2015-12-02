@@ -45,7 +45,8 @@ class PageController extends Controller
         try {
             $data = $api->getPlayerSummaries($array)["response"]["players"][0];
         } catch (\Exception $e) {
-            redirect('/');
+            Session::flash('message_error', 'Error: Your profile is not completely visible.');
+            return redirect('/');
         }
 
         return view('profile', $data);

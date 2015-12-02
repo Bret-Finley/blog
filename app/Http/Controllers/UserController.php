@@ -25,24 +25,27 @@ class UserController extends Controller
 
         if(empty($data))
         {
+            Session::flash('message_error', 'Error: Invalid Steam ID');
             return redirect('/');
         }
 
         $data = $data[0];
         if($data["communityvisibilitystate"] == -1)
         {
+            Session::flash('message_error', 'Error: Your Profile is not Completely Visible');
             return redirect('/');
         }
 
         Session::put('steamid', $id);
 
+        Session::flash('message_info', 'Successfully Logged In');
         return redirect('/');
     }
 
     public function logout()
     {
         Session::forget('steamid');
-
+        Session::flash('message_info', 'Successfully Logged Out');
         return redirect('/');
     }
 
@@ -50,6 +53,7 @@ class UserController extends Controller
     {
         if(!Session::has('steamid'))
         {
+            Session::flash('message', 'Error: Not Logged In');
             return redirect('/');
         }
 
@@ -64,6 +68,7 @@ class UserController extends Controller
     {
         if(!Session::has('steamid'))
         {
+            Session::flash('message', 'Error: Not Logged In');
             return redirect('/');
         }
 
@@ -74,8 +79,9 @@ class UserController extends Controller
         try {
             $data = $api->getFriends((string)$steamid);
         } catch (\Exception $e) {
-            redirect('/');
+            return redirect('/');
         }
+
         $friends = $data["friendslist"];
         $friends = $friends["friends"];
         $array = array();
