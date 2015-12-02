@@ -22,11 +22,16 @@ class UserController extends Controller
         $array = array();
         array_push($array, $id);
         $data = $api->getPlayerSummaries($array)["response"]["players"];
-        return $data;
 
-        if(empty($data) || $data["communityvisibilitystate"] == -1)
+        if(empty($data))
         {
             return redirect('/');
+        }
+
+        $data = $data[0];
+        if($data["communityvisibilitystate"] == -1)
+        {
+            return redirect('/';)
         }
 
         Session::put('steamid', $id);
