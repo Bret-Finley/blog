@@ -18,6 +18,14 @@ class UserController extends Controller
             ]);
         $input = $request->all();
         $id = $input["steamid"];
+        $api = new SteamAPIController();
+        $data = $api->getPlayerSummaries($id)["response"]["players"];
+
+        if(empty($data))
+        {
+            return redirect('/');
+        }
+
         Session::put('steamid', $id);
 
         return redirect('/');
@@ -39,7 +47,6 @@ class UserController extends Controller
 
         $steamid = Session::get('steamid');
         $api = new SteamAPIController();
-        //$data = $api->getLibraryVerbose('76561198025369330');
         $data = $api->getLibraryVerbose((string)$steamid);
         $data = $data["response"];
         return view('library', $data);
@@ -51,10 +58,9 @@ class UserController extends Controller
         {
             return redirect('/');
         }
-        
+
         $steamid = Session::get('steamid');
         $api = new SteamAPIController();
-        //$data = $api->getFriends('76561198025369330');
         $data = $api->getFriends((string)$steamid);
         $friends = $data["friendslist"];
         $friends = $friends["friends"];
