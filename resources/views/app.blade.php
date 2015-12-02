@@ -16,11 +16,11 @@
     <body style="color: white; background-color: #183F53;">
     <div class="container">
         @if(Session::has('message_info'))
-            <div class="alert alert-success">{{ Session::get('message_info') }}</div>
+            <div class="alert alert-success text-center">{{ Session::get('message_info') }}</div>
         @endif
 
         @if(Session::has('message_error'))
-            <div class="alert alert-danger">{{ Session::get('message_error') }}</div>
+            <div class="alert alert-danger text-center">{{ Session::get('message_error') }}</div>
         @endif
         <div class="page-header" style="background-color:#183F53; border-bottom: 0px solid black; text-align:center">
             <h1 style="color:black;">My Steam Pipe</h1>

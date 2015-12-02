@@ -79,6 +79,7 @@ class UserController extends Controller
         try {
             $data = $api->getFriends((string)$steamid);
         } catch (\Exception $e) {
+            Session::flash('message_error', 'Error: Profile Not Completely Visible');
             return redirect('/');
         }
 
