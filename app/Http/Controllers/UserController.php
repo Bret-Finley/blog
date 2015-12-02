@@ -23,7 +23,7 @@ class UserController extends Controller
         array_push($array, $SteamID);
         $data = $api->getPlayerSummaries($array)["response"]["players"];
 
-        if(empty($data))
+        if(empty($data) || $data["communityvisibilitystate"] == -1)
         {
             return redirect('/');
         }
