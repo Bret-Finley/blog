@@ -53,7 +53,7 @@ class UserController extends Controller
     {
         if(!Session::has('steamid'))
         {
-            Session::flash('message', 'Error: Not Logged In');
+            Session::flash('message_error', 'Error: Not Logged In');
             return redirect('/');
         }
 
@@ -68,7 +68,7 @@ class UserController extends Controller
     {
         if(!Session::has('steamid'))
         {
-            Session::flash('message', 'Error: Not Logged In');
+            Session::flash('message_error', 'Error: Not Logged In');
             return redirect('/');
         }
 
