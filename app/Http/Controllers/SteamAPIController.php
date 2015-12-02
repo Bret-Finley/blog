@@ -56,17 +56,8 @@ class SteamAPIController extends Controller
 
     public function getPlayerSummaries($steamids)
     {
-        $url = NULL;
-        if(count($steamids) > 1)
-        {
-            $cdl = join(',', $steamids);
-            $url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $this->apikey . '&steamids=' . $cdl;
-        }
-
-        else {
-            $url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $this->apikey . '&steamids=' . $steamids;
-        }
-        
+        $cdl = join(',', $steamids);
+        $url = 'http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=' . $this->apikey . '&steamids=' . $cdl;
         $json = file_get_contents($url);
         $data = json_decode($json, true);
         return $data;

@@ -19,7 +19,9 @@ class UserController extends Controller
         $input = $request->all();
         $id = $input["steamid"];
         $api = new SteamAPIController();
-        $data = $api->getPlayerSummaries($id)["response"]["players"];
+        $array = array();
+        array_push($array, $SteamID);
+        $data = $api->getPlayerSummaries($array)["response"]["players"];
 
         if(empty($data))
         {
