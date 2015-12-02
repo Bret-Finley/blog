@@ -20,7 +20,7 @@ class UserController extends Controller
         $id = $input["steamid"];
         $api = new SteamAPIController();
         $array = array();
-        array_push($array, $SteamID);
+        array_push($array, $id);
         $data = $api->getPlayerSummaries($array)["response"]["players"];
 
         if(empty($data) || $data["communityvisibilitystate"] == -1)
