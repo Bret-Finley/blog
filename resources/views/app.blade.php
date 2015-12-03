@@ -22,6 +22,12 @@
         @if(Session::has('message_error'))
             <div class="alert alert-danger text-center">{{ Session::get('message_error') }}</div>
         @endif
+
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+              <div class="alert alert-danger text-center">{{ $error }}</div>
+            @endforeach
+        @endif
         <div class="page-header" style="background-color:#183F53; border-bottom: 0px solid black; text-align:center">
             <h1 style="color:black;">My Steam Pipe</h1>
         </div>
